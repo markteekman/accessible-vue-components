@@ -1,7 +1,7 @@
 {
   "name": "accessible-vue-components",
   "description": "A set of Accessible, easy to use, Front-end UI Components for Vue 3.",
-  "version": "0.1.2",
+  "version": "0.0.1",
   "author": "Mark Teekman",
   "homepage": "https://accessible-vue.dev",
   "keywords": [
