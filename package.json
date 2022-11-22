@@ -1,0 +1,55 @@
+{
+  "name": "accessible-vue-components",
+  "description": "A set of Accessible, easy to use, Front-end UI Components for Vue 3.",
+  "version": "0.1.0",
+  "author": "Mark Teekman",
+  "homepage": "https://accessible-vue.dev",
+  "keywords": [
+    "vue",
+    "vue.js",
+    "vue 3",
+    "vue-component",
+    "vue-components",
+    "accessible",
+    "accessibility",
+    "a11y",
+    "wcag",
+    "responsive",
+    "ui-library",
+    "ui-components"
+  ],
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/accessible-vue-components.umb.js",
+  "module": "./dist/accessible-vue-components.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/accessible-vue-components.es.js",
+      "require": "./dist/accessible-vue-components.umd.js"
+    },
+    "./dist/style.css": "./dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markteekman/accessible-vue-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/markteekman/accessible-vue-components/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.2.0",
+    "path": "^0.12.7",
+    "sass": "^1.49.9",
+    "vite": "^3.2.3"
+  }
+}
