@@ -1,7 +1,7 @@
 # Accessible Vue Components
 A set of Accessible, easy to use, Front-end UI Components for [Vue 3](https://vuejs.org/). Most of these components are used in the [Accessible Vue Starter](https://github.com/markteekman/accessible-vue-starter) which showcases practical use cases for them. As a bonus, the starter also has its own dedicated components (like a keyboard accessible and responsive navigation) and other utilities provided by Tailwind CSS.
 
-> _**NOTE:** This package is still in it's early stages of development, it's NOT recommended to start using it in production yet!_
+> _**NOTE:** This package is still in it's early stages of development, it's NOT recommended to start using it in production yet! This project is inspired by the Accessible Astro Components and will be developed in the same way, but for Vue._
 
 ## Installation
 Run the following command in your project folder to get started:
@@ -10,20 +10,25 @@ npm install accessible-vue-components
 ```
 
 ## Usage
-You can import the different components from the package using the following import statement:
+You need to install the components as a plugin in your Vue app. You can do this by adding the following code to your `main.js` file:
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
 
-```vue
-<script setup>
-import { SkipLinks, ... } from 'accessible-vue-components'
-</script>
----
+// register accessible components as a plugin and import styles
+import components from 'accessible-vue-components'
+import 'accessible-vue-components/dist/style.css'
+
+const app = createApp(App)
+app.use(components)
+app.mount('#app')
 ```
 
 **Skip to**: [SkipLinks](#SkipLinks)
 
 ### SkipLinks
 
-- [Live demo](https://components.accessible-astro.dev/skiplinks)
+- [Live demo]() (coming soon)
 
 SkipLinks provide a way for users using assistive technologies to skip repeated content on pages to go directly to the main content of a website or application. To use this component properly, make sure you give the main content of your project an `id` of `#main-content` so the SkipLink can target it. As a fallback the SkipLink will try to target the `h1` of the page. If neither are found a warning will be logged to the console.
 
@@ -33,12 +38,10 @@ SkipLinks provide a way for users using assistive technologies to skip repeated 
 #### Example
 
 ```vue
-<script setup>
-import { SkipLink } from 'accessible-astro-components'
-</script>
-
 <template>
-  <SkipLinks />
+  <header>
+    <SkipLinks />
+  </header>
 </template>
 ```
 
@@ -46,15 +49,15 @@ import { SkipLink } from 'accessible-astro-components'
 You can apply your own styles by overwriting the specificity of the default styles. For example, to change the color of the SkipLinks you can use the following CSS:
 
 ```scss
-<style lang="scss">
+<style>
   body .skiplinks a {
     color: white;
     background-color: purple;
+  }
 
-    &:hover
-    &:focus {
-      background-color: indigo;
-    }
+  body .skiplinks a:hover,
+  body .skiplinks a:focus {
+    background-color: indigo;
   }
 </style>
 ```
