@@ -50,13 +50,13 @@ You can apply your own styles by overwriting the specificity of the default styl
 
 ```scss
 <style>
-  body .skiplinks a {
+  header .avc-skiplinks a {
     color: white;
     background-color: purple;
   }
 
-  body .skiplinks a:hover,
-  body .skiplinks a:focus {
+  header .avc-skiplinks a:hover,
+  header .avc-skiplinks a:focus {
     background-color: indigo;
   }
 </style>
