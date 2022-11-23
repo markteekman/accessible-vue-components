@@ -9,10 +9,6 @@ const setFocusOnElement = (element) => {
 }
 
 const skipFocusToContent = (event) => {
-  if (!event.target.closest('a')) return
-  const key = event.key || event.keyCode
-
-  if (key !== 'Enter') return
   const target = skipLinks.value.querySelector('a').getAttribute('href')
 
   if (document.querySelector(target)) {
@@ -31,29 +27,27 @@ const skipFocusToContent = (event) => {
 </script>
 
 <template>
-  <div class="skip-links" ref="skipLinks">
-    <a href="#main-content" class="skip-link" @click.prevent="skipFocusToContent">Skip to main content</a>
+  <div class="avc-skiplinks" ref="skipLinks">
+    <a href="#main-content" class="skiplinks__skiplink" @keydown.enter="skipFocusToContent">Skip to main content</a>
   </div>
 </template>
 
-<style lang="scss" scoped>
-.skip-links {
-  a {
-    color: var(--action-color, #222);
-    background-color: var(--background, #fff);
-    border-bottom-right-radius: 6px;
-    padding: 1rem 3.25rem;
-    position: absolute;
-    display: block;
-    z-index: 10;
-    top: -100vh;
-    left: 0;
+<style>
+.avc-skiplinks a {
+  color: var(--action-color, #222);
+  background-color: var(--background, #fff);
+  border-bottom-right-radius: 6px;
+  padding: 1rem 3.25rem;
+  position: absolute;
+  display: block;
+  z-index: 10;
+  top: -100vh;
+  left: 0;
+}
 
-    &:hover,
-    &:focus {
-      top: 0;
-      outline-offset: 2px;
-    }
-  }
+.avc-skiplinks a:hover,
+.avc-skiplinks a:focus {
+  top: 0;
+  outline-offset: 2px;
 }
 </style>
