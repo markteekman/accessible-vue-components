@@ -28,7 +28,9 @@ const skipFocusToContent = (event) => {
 
 <template>
   <div class="avc-skiplinks" ref="skipLinks">
-    <a href="#main-content" class="skiplinks__skiplink" @keydown.enter="skipFocusToContent">Skip to main content</a>
+    <a href="#main-content" class="skiplinks__skiplink" @keydown.enter="skipFocusToContent">
+      <slot>Skip to main content</slot>
+    </a>
   </div>
 </template>
 
